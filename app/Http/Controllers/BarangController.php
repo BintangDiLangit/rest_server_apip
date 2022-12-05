@@ -19,7 +19,10 @@ class BarangController extends Controller
     public function store(Request $request)
     {
         $data = Barang::create([
-            'nama_kategori' => $request->nama_kategori
+            'kategori_id' => $request->kategori_id,
+            'nama_barang' => $request->nama_barang,
+            'gambar_barang' => $request->gambar_barang,
+            'harga_barang' => $request->harga_barang,
         ]);
         return response()->json([
             'message'  => 'Barang Berhasil Ditambahkan',
@@ -31,7 +34,10 @@ class BarangController extends Controller
 
         $data = Barang::find($id);
         $data->update([
-            'nama_kategori' => $request->nama_kategori
+            'kategori_id' => $request->kategori_id,
+            'nama_barang' => $request->nama_barang,
+            'gambar_barang' => $request->gambar_barang,
+            'harga_barang' => $request->harga_barang,
         ]);
         return response()->json([
             'message'  => 'Barang Berhasil Diupdate',

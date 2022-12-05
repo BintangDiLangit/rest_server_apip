@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BarangController;
 use App\Http\Controllers\KategoriController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -25,8 +26,8 @@ Route::prefix('v1')->group(function () {
     Route::post('/kategori/{id}', [KategoriController::class, 'update']);
     Route::delete('/kategori/{id}', [KategoriController::class, 'destroy']);
 
-    Route::get('/all-barang', [PortfolioController::class, 'index']);
-    Route::post('/barang', [PortfolioController::class, 'store']);
-    Route::post('/barang/{id}', [PortfolioController::class, 'update']);
-    Route::delete('/barang/{id}', [PortfolioController::class, 'destroy']);
+    Route::get('/all-barang', [BarangController::class, 'index']);
+    Route::post('/barang', [BarangController::class, 'store']);
+    Route::post('/barang/{id}', [BarangController::class, 'update']);
+    Route::delete('/barang/{id}', [BarangController::class, 'destroy']);
 });
